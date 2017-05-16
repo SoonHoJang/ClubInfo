@@ -1,0 +1,190 @@
+<div class="container">
+  <div class="row mt-6"></div>
+  <div class="row justify-content-md-center">
+      
+      <form class="tagsearch col-md-12" method="POST" action="/search">
+        <input type="text" name="query" placeholder="관련 검색어로 검색">
+      </form>  
+  
+      <div class="text-center col-md-12 mb-5">
+          <div class="button-group js-radio-button-group" data-filter-group="category">
+              <button class="btn hvr-underline-from-center is-checked" data-filter="*">전체</button>
+              <button class="btn hvr-underline-from-center" data-filter=".study">학술</button>
+              <button class="btn hvr-underline-from-center" data-filter=".athle">체육</button>
+              <button class="btn hvr-underline-from-center" data-filter=".science">과학</button>
+              <button class="btn hvr-underline-from-center" data-filter=".relig">종교</button>
+              <button class="btn hvr-underline-from-center" data-filter=".social">사회</button>
+              <button class="btn hvr-underline-from-center" data-filter=".creat">창작</button>
+              <button class="btn hvr-underline-from-center" data-filter=".sports">스포츠</button>
+              <button class="btn hvr-underline-from-center" data-filter=".art">예술</button>
+          </div>
+      </div>
+  </div>
+  
+
+<!--
+DB작업 할겁니다~ 무시하셔도 되는 주석입니다 
+육각형을 Auclub에서 하나씩 반복해서 뿌려줄겁니다~
+<%= @auclubs.each do |club| %>
+
+0 ~ 7 까지 학술 체육 과학 종교 사회 창작 스포츠 예술 순으로 카테고리 저장
+  <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="<% auclub_path(club.id)%>">
+            <img src="<%=club.logo%>" alt="">
+            <h1><%=club.name%></h1>
+            <p><%=club.introduce%></p>
+          </a>
+        </div>
+      </li>
+<% end %>
+DB작업 할겁니다~ 무시하셔도 되는 주석입니다 
+육각형을 Auclub에서 하나씩 반복해서 뿌려줄겁니다~
+-->
+
+<div class="honeycombs">
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb">
+     <img src="<%= image_path 'logo1.jpg' %>" />
+     <span>jQueryScript.Net</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb art">
+       <img src="<%= image_path 'clubinfo logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb art">
+      <img src="<%= image_path 'logo3.jpg' %>" />
+      <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb art">
+       <img src="<%= image_path 'logo4.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb study">
+       <img src="<%= image_path 'logo5.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb athle">
+       <img src="<%= image_path 'logo6.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb athle">
+       <img src="<%= image_path 'clubinfo logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb athle">
+       <img src="<%= image_path 'logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb study">
+       <img src="<%= image_path 'logo3.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb science">
+       <img src="<%= image_path 'clubinfo logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb science">
+       <img src="<%= image_path 'logo5.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+   
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb relig">
+       <img src="<%= image_path 'clubinfo logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb relig">
+       <img src="<%= image_path 'logo1.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb relig">
+       <img src="<%= image_path 'logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb social">
+       <img src="<%= image_path 'logo3.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb social">
+       <img src="<%= image_path 'clubinfo logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb social">
+       <img src="<%= image_path 'logo5.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb creat">
+       <img src="<%= image_path 'logo6.jpg' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb creat">
+       <img src="<%= image_path 'clubinfo logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+  
+  <a href="<%= auclub_path(1)%>">
+    <div class="comb creat">
+       <img src="<%= image_path 'logo2.png' %>" />
+       <span><b>This is</b><br>a test</span>
+    </div>
+  </a>
+    
+</div>
+
+
+</div>

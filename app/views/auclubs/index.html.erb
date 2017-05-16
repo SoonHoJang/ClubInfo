@@ -40,7 +40,7 @@
 
 <% @result = Auclub.where(name: 'auclub.name', description: 'auclub.delete', category: 'auclub.category') %>
 
-<% if query = @result %>
+<% if query == @result %>
 <% @result.each do |club| %>
 <%= club.body %>
 <% else %>

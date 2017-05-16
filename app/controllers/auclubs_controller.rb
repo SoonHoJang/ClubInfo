@@ -30,7 +30,7 @@ class AuclubsController < ApplicationController
   # GET /auclubs/new
   def new
     @auclub = Auclub.new
-    @yschedule = Yschedule.new
+    @yschedules = []
     4.times do
         @yschedules << Yschedule.new
     end

@@ -1,0 +1,161 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+// 서비스 전체 기본 폰트 크기 정의
+* {
+    font-family: "Spoqa Han Sans", sans-serif;
+    font-weight: 100;
+}
+
+html {
+    font-size: 16px !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+main {
+    min-height: 70vh;
+}
+
+// 폰트 정의
+@font-face {
+  font-family: "ktv_bold";
+  src: url('/fonts/ktv_bold.ttf'); 
+}
+
+@font-face {
+  font-family: "kt_med";
+  src: url("/fonts/kt_med.ttf"); 
+}
+
+// 컬러 정의
+body {
+    background-color: #FFDF00 !important;
+}
+
+.auclub-footer {
+    color: white !important;
+    background: #444 !important;
+}
+
+// navbar 내 component 정의
+.nav-logo {
+    width: 5rem;
+    height: auto;
+}
+
+.bg-auclub {
+    background: rgb(0, 105, 192) !important;
+}
+
+// Search
+form#search-form {
+    position: relative;
+    text-align: center;
+
+}
+
+.bootstrap-tagsinput {
+    margin: 0 auto;
+    border: 3px solid #fff;
+    border-radius: 25px;
+    max-width: 800px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-family: "kt_med" !important;
+    overflow: hidden;
+    max-height: 43px;
+    position: relative;
+}
+
+.bootstrap-tagsinput > input[type='text'] {
+    background: none;
+    outline: none;
+}
+
+button.search-form-right {
+    position: absolute;
+    right: 12px;
+    top: 6px;
+    background: none;
+    outline: 0;
+    border: 0;
+}
+
+
+.search-btn {
+    background: none;
+}
+.navbar-search{
+    background-color: white;
+ 
+}
+.navbar-nav{
+    margin-left: auto;
+}
+.navbar-brand{
+    
+    margin-left: auto;
+}
+
+    
+
+
+
+
+section{
+    padding-top: 80px;
+}
+
+.nav-item {
+    color : #FFDF00 !important;
+    font-size: 1.5rem !important;
+    font-family: "ktv_bold" !important;
+}
+
+
+
+.home-bar{
+    padding: 15px;
+    
+}
+
+.btn{
+    background: none;
+    padding: .5rem 0.6rem !important;
+    color: #006EBD;
+    font-size: 1.5rem !important;
+    font-family: "ktv_bold" !important;
+}
+
+#footer{
+    
+    text-align: center;
+    
+    font-family: "kt_med"  ;
+}
+
+.button-group{
+    padding-top : 25px;
+    
+}
+
+.link_ll{
+    color : #006EBD !important;
+    
+}
