@@ -1,0 +1,15 @@
+<%= form_for @apply do |f| %>
+
+  <div class="field">
+    <%= f.hidden_field :auclub_id, value: params[:id] %>
+    <%= f.label :name, "이름"%><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :phone, "연락처" %><br>
+    <%= f.text_field :phone %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit '가입하기', class: 'white-text btn btn-lg btn-block btn-warning' %>
+  </div>
+  
+<% end %>

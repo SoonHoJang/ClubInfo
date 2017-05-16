@@ -1,0 +1,358 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+@font-face {
+  font-family: "ktv_bold";
+  src: font-url("ktv_bold.ttf"); }
+@font-face {
+  font-family: "kt_med";
+  src: font-url("kt_med.ttf"); }
+body {
+  background-color: #FFDF00 !important; }
+
+.search-query {
+  background: none;
+  width: 350px; }
+
+.search-btn {
+  background: none; }
+
+.navbar-search {
+  background-color: white; }
+
+.navbar-nav {
+  margin-left: auto; }
+
+.navbar-brand {
+  margin-left: auto; }
+
+.search_box {
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  border-radius: 25px; }
+
+.search_box > form {
+  height: 100%; }
+
+.search_input {
+  padding: 23px 39px 23px 0px;
+  width: 79%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  letter-spacing: -1px;
+  font-size: 19px;
+  color: #006EBD;
+  font-family: "kt_med" !important;
+  font-weight: 300; }
+
+section {
+  padding-top: 80px; }
+
+.navbar {
+  background-color: #006EBD !important; }
+
+.nav-item {
+  color: #FFDF00 !important;
+  font-size: 1.7rem !important;
+  font-family: "ktv_bold" !important; }
+
+.search-bar {
+  position: relative;
+  text-align: center;
+  padding: 70px 0; }
+
+.home-bar {
+  padding: 15px; }
+
+.btn {
+  background: none;
+  padding: .5rem 0.6rem !important;
+  color: #006EBD;
+  font-size: 1.5rem !important;
+  font-family: "ktv_bold" !important; }
+
+#footer {
+  text-align: center; }
+
+/*# sourceMappingURL=application.css.map */
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+
+.hexagon {
+  position: absolute;
+  width: 100px;
+  height: 57.74px;
+  background-color: #FFDF00;
+  margin: 28.87px 0;
+  border-left: solid 5px #006EBD;
+  border-right: solid 5px #006EBD;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 70.71px;
+  height: 70.71px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 9.6447px;
+}
+
+.hexagon:before {
+  top: -35.3553px;
+  border-top: solid 7.0711px #006EBD;
+  border-right: solid 7.0711px #006EBD;
+}
+
+.hexagon:after {
+  bottom: -35.3553px;
+  border-bottom: solid 7.0711px #006EBD;
+  border-left: solid 7.0711px #006EBD;
+}
+
+.card{
+  box-shadow: 0 50px 35px rgba(0,0,0,0.30), 0 15px 15px rgba(0,0,0,0.22);
+}
+.card::before {
+   content: "";
+    width: 97.3%;
+    height: 30px;
+    position: absolute;
+    top: 100%;
+    right: 30px;
+    background: white;
+  }
+  .card::after {
+    content: "";
+    width: 0;
+    height: 0;
+    margin-left: -30px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    border: 15px solid white;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../usr/local/rvm/gems/ruby-2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+@font-face {
+  font-family: "ktv_bold";
+  src: url(/assets/ktv_bold-bf56ed162808651b2ce1a8f810dcfcf5a3f2de8e456a612c96ac522d4361636e.ttf);
+}
+@font-face {
+  font-family: "kt_med";
+  src: url(/assets/kt_med-14d9df80685e38f4c3747502890d128908ddb05f957e669e83a47a6b78e9aec6.ttf);
+}
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+body {
+  background-color: #FFDF00 !important;
+}
+
+/* line 32, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.search-query {
+  background: none;
+  width: 350px;
+}
+
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.search-btn {
+  background: none;
+}
+
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.navbar-search {
+  background-color: white;
+}
+
+/* line 43, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.navbar-nav {
+  margin-left: auto;
+}
+
+/* line 46, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.navbar-brand {
+  margin-left: auto;
+}
+
+/* line 53, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.search_box {
+  width: 600px;
+  height: 50px;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  border-radius: 25px;
+}
+
+/* line 61, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.search_box > form {
+  height: 100%;
+}
+
+/* line 65, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.search_input {
+  padding: 23px 39px 23px 0px;
+  width: 79%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  letter-spacing: -1px;
+  font-size: 19px;
+  color: #006EBD;
+  font-family: "kt_med" !important;
+  font-weight: 300;
+}
+
+/* line 80, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+section {
+  padding-top: 80px;
+}
+
+/* line 84, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.navbar {
+  background-color: #006EBD !important;
+}
+
+/* line 89, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.nav-item {
+  color: #FFDF00 !important;
+  font-size: 1.7rem !important;
+  font-family: "ktv_bold" !important;
+}
+
+/* line 97, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.search-bar {
+  position: relative;
+  text-align: center;
+  padding: 70px 0;
+}
+
+/* line 103, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.home-bar {
+  padding: 15px;
+}
+
+/* line 108, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.btn {
+  background: none;
+  padding: .5rem 0.6rem !important;
+  color: #006EBD;
+  font-size: 1.5rem !important;
+  font-family: "ktv_bold" !important;
+}
+
+/* line 116, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+#footer {
+  text-align: center;
+}

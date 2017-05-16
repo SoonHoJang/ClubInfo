@@ -1,0 +1,246 @@
+<style>
+    body {
+    background: #FFDF00;
+  }
+  
+  main {
+    background: #FFDF00;
+  }
+  
+  .card {
+    font-size: 17px;
+    min-width: 97.3% !important;
+    border: none !important;
+    margin-bottom: 4.5em;
+  }
+  
+  .card-header {
+    background: #006EBD !important;
+    height: 60px;
+  }
+  
+  strong {
+    color: #006EBD;
+  }
+  
+  nav {
+    background-color: #006EBD !important;
+    font-size: 15pt;
+  }
+  
+  nav.navbar-login {
+    float: right !important;
+    margin-right: auto !important;
+  }
+  
+  #logo {
+    width: 130px;
+    height: auto;
+</style>
+<main>
+  <div class="container">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" style=width:90% id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item scroll nav-link" data-speed="350" href="#introduce">소개 <span class="sr-only">(current)</span></a>
+          <a class="nav-item scroll nav-link" data-speed="350" href="#exercise1">활동</a>
+          <a class="nav-item scroll nav-link" data-speed="350" href="#recruit">모집</a>
+          <a class="nav-item scroll nav-link" data-speed="350" href="#contact">연락</a>
+        </div>
+      </div>
+
+      <!--<div class="navbar-login">-->
+      <!--<a class="nav-item nav-link" href="<%=new_user_session_path%>">로그인</a>-->
+      <!--</div>-->
+
+    </nav>
+    <div id="logo-container">
+      <img src="<%= image_path " AjouClub_Toplogo " %>" id="logo">
+    </div>
+    <div class="card">
+      <div class="card-block">
+        <div class="row">
+          <div class="col-md-2 ">
+            <img src="<%= image_path @auclub.logo.url %>" alt="ajouclublogo" style="float:left;" height="150" width="150">
+
+          </div>
+
+          <div class="col-md-10">
+            <h3>
+              <%= @auclub.name %>
+            </h3>
+            <P>
+              <h4>
+                <%= @auclub.introduce %>
+              </h4>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="introduce">
+      <h3 class="card-header">
+        <div class="hexagon">
+          <p>소개</p>
+        </div>
+      </h3>
+      <div class="card-block">
+        <div>
+
+        </div>
+        <div>
+          <header>
+            <h3 class="detail">상세</h3>
+          </header>
+          <p>
+            <%= @auclub.description %>
+          </p>
+        </div>
+
+        <div>
+          <header>
+            <h3 class="history">연혁</h3>
+          </header>
+          <p>연혁이다</p>
+        </div>
+
+        </section>
+      </div>
+    </div>
+
+
+
+    <div class="card" id="exercise1">
+      <h3 class="card-header">
+        <div class="hexagon">
+          <p>활동</p>
+        </div>
+      </h3>
+      <div class="card-block">
+        <div>
+
+        </div>
+        <div>
+          <header>
+            <h3 class="detail">정기모임</h3>
+          </header>
+          <p>
+            <%= @auclub.meeting_time %>
+          </p>
+        </div>
+
+        <div>
+          <header>
+            <h3 class="history">활동비</h3>
+          </header>
+          <p>활동비</p>
+        </div>
+
+        </section>
+      </div>
+    </div>
+    <div class="card" id="recruit">
+      <h3 class="card-header">
+        <div class="hexagon">
+          <p>모집</p>
+        </div>
+      </h3>
+      <div class="card-block">
+        <div>
+          <section>
+
+        </div>
+        <div>
+          <header>
+            <h3 class="detail">모집시기</h3>
+          </header>
+          <p>
+            <% if @auclub.apply_time == 0 %>
+              <p>상시 모집</p>
+              <% else if @auclub.apply_time == 1 %>
+                <p>모집중</p>
+                <% else %>
+                  <p>모집 완료</p>
+                  <% end %>
+                    <% end %>
+          </p>
+        </div>
+
+        <div>
+          <header>
+            <h3 class="history">모집인원 및 대상</h3>
+          </header>
+          <p>상세내용</p>
+        </div>
+
+        <div>
+          <header>
+            <h3 class="history">모집방식</h3>
+          </header>
+          <p>상세내용</p>
+        </div>
+
+        </section>
+      </div>
+    </div>
+    <div class="card" id="contact">
+      <h3 class="card-header">
+        <div class="hexagon">
+          <p>연락</p>
+        </div>
+      </h3>
+      <div class="card-block">
+        <div>
+          <section>
+
+        </div>
+        <div>
+          <header>
+            <h3 class="detail">위치</h3>
+          </header>
+          <p>상세내용</p>
+        </div>
+
+        <div>
+          <header>
+            <h3 class="history">연락처</h3>
+          </header>
+          <p>
+            <%= @auclub.tel %>
+          </p>
+
+        </div>
+
+        <div>
+          <header>
+
+            <h3 class="contact_FB">페이스북</h3>
+            <% if @auclub.facebook != nil %>
+              <a href="http://<%=@auclub.facebook%>" class="card-link" target="_blank">
+                <h4>click</h4>
+              </a>
+              <% else %>
+                <p>페이스북이 없어요ㅠ</p>
+                <% end %>
+          </header>
+        </div>
+
+        </section>
+      </div>
+    </div>
+    <footer>
+      <h2>Made by AUlikelion 5th </h2>
+      <p>For Any Error Issues, Please Contact to <a href="mailto:heinstein13@naver.com">
+  heinstein13@naver.com</a>.</p>
+    </footer>
+    <script src="./introduction.js"></script>
+
+    <% if user_signed_in? && current_user.auclub_id == @auclub.id %>
+      <%= link_to 'Edit', edit_auclub_path(@auclub) %>
+        <% end %>
+
+          <%= link_to 'Back', root_path %>

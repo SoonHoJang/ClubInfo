@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  period: 1
+  title: MyString
+  content: MyText
+  auclub_id: 
+
+two:
+  period: 1
+  title: MyString
+  content: MyText
+  auclub_id: 

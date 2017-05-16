@@ -1,0 +1,2 @@
+class YscheduleController < ApplicationController
+end

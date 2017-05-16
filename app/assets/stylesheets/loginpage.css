@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+main.login {
+  min-height: 100vh;
+}
+
+.login-page {
+    position: absolute;
+    max-width: 360px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#image-container > .logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -130px;
+  max-width: 140px;
+}
+
+form.new_user {
+  width: 360px;
+  min-height: 20rem;
+  text-align: center;
+  background: #006EBD !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+form.new_user div.form {
+  width: 90%;
+}
+
+form.new_user input {
+  width: 100%;
+}

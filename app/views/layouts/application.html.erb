@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Club</title>
+
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+  <% if flash[:danger] %>
+    <div class="notice"><%=flash[:danger]%></div>
+  <% end %>
+  <% if !request.path.include?(auclubs_path) then %>
+  <nav class="navbar navbar-toggleable-md navbar-inverse navbar-auclub">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="<%= root_path %>">
+        <%= image_tag "navbar-logo.png", class: "nav-logo" %>
+      </a>
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav">
+          <% if user_signed_in? %>
+            <a class="nav-item nav-link" href="<%=applies_path%>">관리자 페이지</a>
+            <a class="nav-item nav-link active" href="<%=destroy_user_session_path%>" data-method="delete"> 로그아웃 <span class="sr-only">(current)</span></a>
+          <% else %>
+              <a class="nav-item nav-link active" href="<%=new_user_session_path%>"> 로그인 <span class="sr-only">(current)</span></a>
+          <% end %>
+          <a class="nav-item nav-link" href="<%= about_path %>">About</a>
+        </div>
+      </div>
+  </nav>
+  
+  <% end %>
+
+  <%= yield %>
+  
+  <% unless request.path.include?(new_apply_path) %>
+  <footer class="bd-footer auclub-footer">
+    <div class="container p-5">
+      <p>Developed by <span class="lion">멋쟁이사자처럼 at 아주대학교</span></p>
+      <ul>
+          <li>
+              <a class="link_ll" href="http://ajou.likelion.org" target="_blank">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              ajou.likelion.org
+              </a>
+          </li>
+          <li>
+              <a class="link_ll" href="https://www.facebook.com/aulikelion" target="_blank">
+              <i class="fa fa-facebook-square" aria-hidden="true"></i>
+              www.facebook.com/aulikelion
+              </a>
+          </li>
+      </ul>
+    </div>
+  </footer>
+  <% end %>
+  
+    <% if request.path.include?(root_path) then %>
+    <script src="//unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <% end %>
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body>
+
+</html>

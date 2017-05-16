@@ -1,0 +1,38 @@
+<div class="container full-height">
+  <div class="row mb-5"></div>
+  
+  <div class="row">
+    <div class="card" id="schedule">
+        <h3 class="card-header">
+          <div class="hexagon">
+            <p>목록</p>
+          </div>
+        </h3>
+      <div class="card-block">
+        <h1 class="title"><%=Auclub.find(current_user.auclub_id).name%> 신청 내역</h1>
+        <hr>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <% @applies.each do |apply| %>
+                <% if apply.auclub_id == current_user.auclub_id%>
+                <tr>
+                  <td><%= apply.name %></td>
+                  <td><%= apply.phone %></td>
+               </tr>
+                <% end %>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+  <%=link_to "Edit", edit_auclub_path(current_user.auclub_id)%>
+  <%=link_to "New", new_auclub_path %>
+</div>

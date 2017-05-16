@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Auclubs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Introduce</th>
+      <th>Description</th>
+      <th>Apply time</th>
+      <th>Meeting time</th>
+      <th>Facebook</th>
+      <th>Tel</th>
+      <th>Logo</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auclubs.each do |auclub| %>
+      <tr>
+        <td><%= auclub.name %></td>
+        <td><%= auclub.introduce %></td>
+        <td><%= auclub.description %></td>
+        <td><%= auclub.apply_time %></td>
+        <td><%= auclub.meeting_time %></td>
+        <td><%= auclub.facebook %></td>
+        <td><%= auclub.tel %></td>
+        <td><%= auclub.logo %></td>
+        <td><%= auclub.category %></td>
+        <td><%= link_to 'Show', auclub %></td>
+        <td><%= link_to 'Edit', edit_auclub_path(auclub) %></td>
+        <td><%= link_to 'Destroy', auclub, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% @result = Auclub.where(name: 'auclub.name', description: 'auclub.delete', category: 'auclub.category') %>
+
+<% if query = @result %>
+<% @result.each do |club| %>
+<%= club.body %>
+<% else %>
+<%= "해당되는 동아리가 존재하지 않습니다." %>
+<% end %>
+<% end %>
+
+
+<br>
+
+<%= link_to 'New Auclub', new_auclub_path %>

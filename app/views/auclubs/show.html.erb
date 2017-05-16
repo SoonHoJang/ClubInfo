@@ -1,0 +1,235 @@
+<main>
+
+  <div id="myBtn" onclick="topFunction()"></div> <!--Top으로 가는 버튼-->
+  <a onclick="showPopup('<%= new_apply_path %>?id=<%= params[:id] %>')" id="myBtn2"></a> 
+    
+    
+    <div class="container">
+
+      <nav class="nav navbar navbar-custom">
+        <ul class="gnb-left">
+          <li><%= link_to "홈", root_path, "data-speed": "350" %></li>
+          <li><%= link_to "소개", "#introduce", "data-speed": "350", class: "scroll" %></li>
+          <li><%= link_to "활동", "#exercise", "data-speed": "350", class: "scroll" %></li>
+        </ul> 
+        <div class="logo-helper"></div>
+        <div class="nav-logo">
+          <%= image_tag "AjouClub_Toplogo" %>
+        </div>
+        <ul class="gnb-right">
+          <li><%= link_to "연간일정", "#schedule", "data-speed": "350", class: "scroll" %> </li>
+          <li><%= link_to "모집", "#recruit", "data-speed": "350", class: "scroll" %></li>
+          <li><%= link_to "연락", "#contact", "data-speed": "350", class: "scroll" %></li>
+        </ul>
+      </nav>
+      <nav class="nav-mobile-custom">
+        
+      </nav>
+  
+      <div class="card">
+        <div class="card-block">
+          <div class="row">
+            <div class="col-md-3 about">
+              <%= image_tag @auclub.logo.url, class: "img-thumbnail mb-4" %>
+            </div>
+      
+            <div class="col-md-9">
+              <div class="field">
+                <h3 class="title"><%= @auclub.name %></h3>
+              </div>
+              <hr>
+              <div class="field">
+                <h5 class="subtitle"><i class="fa fa-pencil"></i> 한줄 소개</h5>
+                <p><%= @auclub.introduce %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="introduce">
+        <h3 class="card-header">
+          <div class="hexagon">
+            <p>소개</p>
+          </div>
+        </h3>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-history" aria-hidden="true"></i> 연혁</h3>
+              </header>
+              <hr>
+              <p>연혁이다</p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="detail"><i class="fa fa-pencil"></i> 상세</h3>
+              </header>
+              <hr>
+              <p><%= @auclub.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="exercise">
+        <h3 class="card-header">
+          <div class="hexagon">
+            <p>활동</p>
+          </div>
+        </h3>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-user" aria-hidden="true"></i> 정기모임</h3>
+              </header>
+              <hr>
+              <p><%= @auclub.meeting_time %></p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="detail"><i class="fa fa-credit-card"></i> 활동비</h3>
+              </header>
+              <hr>
+              <p>얼마?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="schedule">
+        <h3 class="card-header">
+          <div class="hexagon">
+            <p>일정</p>
+          </div>
+        </h3>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-user-circle" aria-hidden="true"></i> 1학기</h3>
+              </header>
+              <hr>
+              <p>
+                <%= @yschedules[0].content %>
+              </p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="detail"><i class="fa fa-user-circle" aria-hidden="true"></i> 여름방학</h3>
+              </header>
+              <hr>
+              <p>
+                <%= @yschedules[1].content %>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-user-circle" aria-hidden="true"></i> 2학기</h3>
+              </header>
+              <hr>
+              <p>
+                <%= @yschedules[2].content %>
+              </p>
+            </div>
+            <div class="col-md-6 mb-4">
+              <header>
+                <h3 class="detail"><i class="fa fa-user-circle" aria-hidden="true"></i> 겨울방학</h3>
+              </header>
+              <hr>
+              <p>
+                <%= @yschedules[3].content %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="recruit">
+        <h3 class="card-header">
+          <div class="hexagon">
+            <p>모집</p>
+          </div>
+        </h3>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-calendar" aria-hidden="true"></i> 모집시기</h3>
+              </header>
+              <hr>
+              <p>
+                <% if @auclub.apply_time == 0 %>
+                  <p>상시모집</p>
+                <% else if @auclub.apply_time == 1 %>
+                  <p>모집중</p>
+                <% else %>
+                  <p>모집마감</p>
+                <% end %>
+                <% end %>
+              </p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <header>
+                <h3 class="detail"><i class="fa fa-user" aria-hidden="true"></i> 모집인원 및 대상</h3>
+              </header>
+              <hr>
+              <p><%= @auclub.description %></p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-file" aria-hidden="true"></i> 모집방식</h3>
+              </header>
+              <hr>
+              <p>연혁이다</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" id="contact">
+        <h3 class="card-header">
+          <div class="hexagon">
+            <p>연락</p>
+          </div>
+        </h3>
+        <div class="card-block">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-map" aria-hidden="true"></i> 위치</h3>
+              </header>
+              <hr>
+              <p>연혁이다</p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <header>
+                <h3 class="detail"><i class="fa fa-phone" aria-hidden="true"></i> 연락처</h3>
+              </header>
+              <hr>
+              <p><%= @auclub.tel %></p>
+            </div>
+            <div class="col-md-4 mb-4">
+              <header>
+                <h3 class="history"><i class="fa fa-facebook" aria-hidden="true"></i> 페이스북</h3>
+              </header>
+              <hr>
+              <p>
+                <% if @auclub.facebook != nil %>
+                  <a href="<%=@auclub.facebook%>" class="card-link" target="_blank">
+                  <h4>click</h4>
+                  </a>
+              <% else %>
+                <p>페이스북이 없어요ㅠ</p>
+              <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
